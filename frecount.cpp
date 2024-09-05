@@ -1,4 +1,4 @@
-
+//this questio ned revision to get more clarity and get to know how to use it to write
 
 class Solution {
 public:
