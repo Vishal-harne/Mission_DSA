@@ -1,3 +1,5 @@
+//string is your weak point do practise as much as you ccan
+
 class Solution {
 public:
     bool isPalindrome(string s) {
