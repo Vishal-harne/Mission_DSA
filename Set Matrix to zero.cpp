@@ -50,3 +50,73 @@ public:
         }
     }
 };
+
+
+//lets go for optimise solution
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        int n=matrix.size();
+        int m=matrix[0].size();
+
+        bool firstrow=false;
+        bool firstcol=false;
+
+//just check col and row are zero or not
+        for(int i=0;i<m;i++){
+                if(matrix[0][i]==0){
+                    firstrow=true;
+                    break;
+                }    
+        }
+
+        for(int i=0;i<n;i++){
+                if(matrix[i][0]==0){
+                    firstcol=true;
+                    break;
+                }
+        }
+
+
+        //now go into remaining arrat and if you find zero make row and col set 0
+        for(int i=1;i<n;i++){
+            for(int j=1;j<m;j++){
+                if(matrix[i][j]==0){
+                    matrix[i][0]=0;
+                    matrix[0][j]=0;
+                }
+            }
+        }
+
+
+
+
+        //now lets set zeros to rows ans colums
+        for(int i=1;i<n;i++){
+            if(matrix[i][0]==0){
+                for(int j=0;j<m;j++){
+                    matrix[i][j]=0;//lets make column zeor
+                }
+            }
+        }
+        for(int i=1;i<m;i++){
+            if(matrix[0][i]==0){
+                for(int j=0;j<n;j++){
+                    matrix[j][i]=0;//rows ko zero
+                }
+            }
+        }
+
+
+        //if row and col had zero let them make zero
+        if(firstrow){
+            for(int i=0;i<m;i++)
+            matrix[0][i]=0;
+        }
+        if(firstcol){
+            for(int i=0;i<n;i++){
+                matrix[i][0]=0;
+            }
+        }
+    }
+};
