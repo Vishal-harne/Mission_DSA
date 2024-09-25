@@ -1,0 +1,23 @@
+
+//sasta brute force
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+         int n = nums.size();
+        int cnt=0;
+        
+        for(int i=0;i<n;i++){
+            int csum=0;
+            for(int j=i;j<n;j++){
+                csum+=nums[j];
+                if(csum==k){
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+    }
+};
+
+
+//lets go for optimise
