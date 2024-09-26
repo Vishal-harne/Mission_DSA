@@ -1,0 +1,22 @@
+
+
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        unordered_map<int,int>mp;
+        int presum=0;
+        int ans=0;
+        mp[presum]++;
+       
+        for(int i=0;i<nums.size();i++){
+            presum+=nums[i];
+            int y=presum-k;
+                if(mp.find(y)!=mp.end()){
+                ans+=mp[y];
+            
+            }
+            mp[presum]++;
+        }
+        return ans;
+    }
+};
