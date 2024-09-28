@@ -13,15 +13,11 @@ public:
            while(j<k){
 
             if(nums[j]+nums[k]==-num){
-               vector<int>vec;
-               vec.push_back(num);
-               vec.push_back(nums[j]);
-               vec.push_back(nums[k]);
+             s.push_back({num,nums[j],nums[k]});
                while(j<k && nums[j]==nums[j+1])j++;
-               while(j<k && nums[k]==nums[k--])k--;
+               while(j<k && nums[k]==nums[k-1])k--;
                j++;
-               k--;
-               s.push_back(vec);
+               k--;    
             }
             else if(nums[j]+nums[k]<(-num)){
                     j++;
