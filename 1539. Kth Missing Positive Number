@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int findKthPositive(vector<int>& arr, int k) {
+        int cnt=0;
+        int j=0;
+        int i=1;
+        //you have not handle out of index condition 
+        //you have not handled the count boundation condition
+        //you have limited the answer scope within the limited range 
+        //you are using extra array to store the value which also failed to do so
+        
+        while(cnt<k){
+            if(j<arr.size()  &&  arr[j]==i){
+                j++;
+            }else{
+                cnt++;
+                if(cnt==k){
+                    return i;
+                }
+            }
+            i++;
+        }
+        return -1;
+    }
+};
