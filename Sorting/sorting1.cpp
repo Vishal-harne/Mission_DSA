@@ -32,3 +32,36 @@ int main() {
     }
     return 0;
 }
+
+
+
+//this is uisng aray
+
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+void findsortbyselection(int ans[],int n){
+   
+    for(int i=0;i<n;i++){
+        int mini=i;
+        for(int j=i+1;j<n;j++){
+            if(ans[j]<ans[mini]){
+                mini=j;
+            }
+        }
+        int temp=ans[mini];
+        ans[mini]=ans[i];
+        ans[i]=temp;
+    }
+}
+
+int main() {
+  
+   int ans[]={3,5,2,4,6,2};
+   int n=sizeof(ans)/sizeof(ans[0]);
+    findsortbyselection(ans,n);
+     for(int i=0;i<n;i++){
+            cout<<ans[i]<<" ";
+        }
+    return 0;
+}
