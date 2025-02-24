@@ -25,6 +25,7 @@ void merge(vector<int> & ans,int low,int mid,int high){
         temp.push_back(ans[right]);
         right++;
     }
+    //very simple the temp is dynamic array so when it changes size to adjust this into the ans array need ot adjust the index
      for (int i = low; i <= high; i++) {
         ans[i] = temp[i - low];
     }
