@@ -3,9 +3,9 @@
 using namespace std;
 
 int partition(vector<int> & ans,int low,int high){
-    int pivot=ans[low];2
-    int i=low;2
-    int j=high;5
+    int pivot=ans[low];
+    int i=low;
+    int j=high;
     while(i<j){
         while(ans[i]<=pivot &&  i<=high-1){
             i++;
@@ -33,8 +33,21 @@ void QuickSort(vector<int> & ans,int low,int high){
       cout<<" pivotindex" <<ans[pivotindex]<<" "<<endl;
            cout<<"left hitted"<<endl;
        QuickSort(ans,low,pivotindex-1);
+       
+       int n=ans.size();
+            for(int i=0;i<n;i++){
+                cout<<ans[i]<<" ";
+            }
+            cout<<endl;
+       
         cout<<"right hitted"<<endl;
+        
       QuickSort(ans,pivotindex+1,high);
+      
+             for(int i=0;i<n;i++){
+                    cout<<ans[i]<<" ";
+                }
+                cout<<endl;
     }
 }
 
