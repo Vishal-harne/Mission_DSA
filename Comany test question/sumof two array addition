@@ -1,0 +1,40 @@
+#include <bits/stdc++.h> 
+vector<int> findArraySum(vector<int>&a, int n, vector<int>&b, int m) {
+	int i=n-1;
+    int j=m-1;
+    int carry=0;
+    vector<int>ans;
+    while(i>=0 && j>=0){
+        int sum=a[i]+b[j]+carry;
+        carry=sum/10;
+        int value=sum%10;
+        ans.push_back(value);
+        i--;
+        j--;
+    }
+    while(i>=0){
+      int sum1=a[i]+carry;
+      carry=sum1/10;
+      int value1=sum1%10;
+      ans.push_back(value1);
+      i--;
+    }
+     while(j>=0){
+      int sum2=b[j]+carry;
+      carry=sum2/10;
+      int value2=sum2%10;
+      ans.push_back(value2);
+      j--;
+    }
+    while(carry!=0){
+      int sum3=carry;
+      carry=sum3/10;
+      int value3=sum3%10;
+      ans.push_back(value3);
+    }
+
+   
+     reverse(ans.begin(),ans.end());
+      return ans;
+    
+}
